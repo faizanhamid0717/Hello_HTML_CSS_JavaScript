@@ -1,0 +1,107 @@
+1. What is the difference between a block element and an inline element? 
+Give few examples of block and inline tags which we have in HTML.
+
+1. Block-level elements:
+    - Block-level elements typically start on a new line and take up the full width available to them.
+    - They create a "block" of content, which means that other elements cannot appear to their left or right unless they are floated or positioned.
+    - Block-level elements can have both width and height specified.
+    - Examples of block-level elements: **`<div>`**, **`<p>`**, **`<h1>`** to **`<h6>`**, **`<ul>`**, **`<ol>`**, **`<li>`**, **`<form>`**, **`<header>`**, **`<footer>`**, **`<section>`**, **`<nav>`**, **`<article>`**, etc.
+
+2. Inline elements:
+    - Inline elements do not start on a new line and only take up the necessary width to display their content.
+    - They flow within the surrounding text and allow other elements to appear to their left and right.
+    - Inline elements cannot have width and height specified; they automatically adjust to the size of their content.
+    - Examples of inline elements: **`<span>`**, **`<a>`**, **`<strong>`**, **`<em>`**, **`<img>`**, **`<input>`**, **`<label>`**, **`<button>`**, **`<select>`**, **`<textarea>`**, **`<code>`**, etc.
+
+
+2. In how many ways you can declare CSS to an HTML ?
+
+a. direct in tag : inline style
+<h1 style="color:red">some text</h1>
+
+b. create the style tag called Internal CSS:
+<head>
+  <style>
+    p {
+      color: red;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <p>This is some text.</p>
+</body>
+
+c.  External CSS ; create the external css file by using .css and link them 
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css"> put here your css file name 
+</head>
+
+3. What is selector specificity in CSS and how does it determine the styles applied to elements?
+inline style | style=""  1000
+Id           | #         100
+class        | .         10
+Typeselector | h1{}      1
+Universal    | *         0  
+
+
+inline style : highest preority 1000  eg
+//  internal css
+<style>
+      div{
+        color: blue    
+      }
+</style>
+
+
+<div style="color:red">Color me</div>   // inline style
+
+the color of the div comes red beacuse the inline have highest preiority if we use external file the color also comes red 
+
+
+4. What are CSS positions? What are the position types in CSS? What is the default position property in CSS?
+CSS positions determine how an element is positioned within its parent container 
+Eg index.html
+ 
+a. static position (default) : the normal position of an HTML elements as per the document it is now shown beacuse the default behaviour of html elements is static
+
+b. Relative:
+- The **`relative`** position type allows you to position an element relative to its normal position.
+- When an element is positioned relatively, it can be moved using the **`top`**, **`bottom`**, **`left`**, and **`right`** properties.
+- Relative positioning does not affect the position of other elements on the page.
+.box {
+  position: relative;
+  top: 10px; /* Move 10 pixels down */
+  left: 20px; /* Move 20 pixels to the right */
+}
+
+c. Absolute:
+Absolutely positioned elements are like free-floating objects that are taken out of the normal document flow.
+Absolutely positioned elements can overlap with other elements.
+You can use top, left, right, and bottom properties to position the element from the edges of its containing block.
+.popup {
+  position: absolute;
+  top: 100px; /* Position 100 pixels from the top edge */
+  left: 50%; /* Position at the middle horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+
+d. Fixed:
+Fixed positioned elements are removed from the normal document flow and are not affected by scrolling.
+They remain fixed in their specified position even when the page is scrolled.
+
+e. 5. Sticky:
+    - The **`sticky`** position type is a hybrid of **`relative`** and **`fixed`**.
+    - It positions an element based on its normal position in the document flow until a specified threshold is reached.
+    - Once the threshold is reached during scrolling, the element behaves like a **`fixed`** positioned element and remains fixed in its position.
+
+
+
+5. What is the concept of semantic tags in HTML? Can you provide a few examples to illustrate their usage?
+are those tags which carry a meaning along with them eg
+<header></header>   Represents the introductory
+<nav></nav>       Denotes a section containing navigation links.
+<fotter>
+<main>: Represents the main content of the document,
+<article>: Defines a self-contained composition or independent piece of content.
